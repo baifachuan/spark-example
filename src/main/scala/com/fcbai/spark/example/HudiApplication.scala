@@ -36,8 +36,6 @@ object HudiApplication {
       }
       case _ => throw new RuntimeException("no parameter")
     }
-
-    HudiQuickStartExample.query
     spark.stop()
   }
 }

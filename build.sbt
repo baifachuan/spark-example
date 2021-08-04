@@ -16,5 +16,6 @@ libraryDependencies ++= Seq(
   "org.apache.logging.log4j" % "log4j-api" % "2.14.1",
   "org.apache.logging.log4j" % "log4j-core" % "2.14.1",
   "com.github.scopt" %% "scopt" % "4.0.1",
-  "org.apache.hadoop" % "hadoop-client" % "3.3.1"
+  "org.apache.hadoop" % "hadoop-client" % "3.3.1",
+  "org.scalatest" %% "scalatest" % "3.2.9" % "test"
 )

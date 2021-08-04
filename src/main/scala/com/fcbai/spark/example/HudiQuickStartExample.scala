@@ -5,9 +5,9 @@ import org.apache.hudi.QuickstartUtils._
 import org.apache.hudi.config.HoodieWriteConfig._
 import org.apache.spark.sql.SaveMode._
 import org.apache.spark.sql.SparkSession
-
 import scala.collection.JavaConversions._
-class HudiQuTickStartExample {
+
+class HudiQuickStartExample {
   val tableName = "hudi_trips_cow"
   val basePath = "file:///tmp/hudi_trips_cow"
   val dataGen = new DataGenerator
