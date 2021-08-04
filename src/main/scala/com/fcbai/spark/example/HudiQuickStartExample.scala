@@ -7,11 +7,7 @@ import org.apache.spark.sql.SaveMode._
 import org.apache.spark.sql.SparkSession
 
 import scala.collection.JavaConversions._
-class HudiExamples {
-
-}
-
-object HudiExamples {
+class HudiQuTickStartExample {
   val tableName = "hudi_trips_cow"
   val basePath = "file:///tmp/hudi_trips_cow"
   val dataGen = new DataGenerator
@@ -32,7 +28,6 @@ object HudiExamples {
   }
 
   def query(implicit spark: SparkSession): Unit = {
-    // spark-shell
     val tripsSnapshotDF = spark.
       read.
       format("hudi").
@@ -86,4 +81,8 @@ object HudiExamples {
     // fetch should return (total - 2) records
     spark.sql("select uuid, partitionpath from hudi_trips_snapshot").count()
   }
+}
+
+object HudiQuickStartExample {
+  def apply(): HudiQuickStartExample = new HudiQuickStartExample()
 }
