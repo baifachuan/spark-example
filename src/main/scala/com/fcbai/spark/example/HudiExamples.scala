@@ -19,7 +19,7 @@ object HudiExamples {
   def write(implicit spark: SparkSession): Unit = {
     val inserts = convertToStringList(dataGen.generateInserts(10))
     val df = spark.read.json(spark.sparkContext.parallelize(inserts, 2))
-    df.show()
+
     df.write.format("hudi").
       options(getQuickstartWriteConfigs).
       option(PRECOMBINE_FIELD_OPT_KEY, "ts").
@@ -28,6 +28,7 @@ object HudiExamples {
       option(TABLE_NAME, tableName).
       mode(Overwrite).
       save(basePath)
+    df.show()
   }
 
   def query(implicit spark: SparkSession): Unit = {

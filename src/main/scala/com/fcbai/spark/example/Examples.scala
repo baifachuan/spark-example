@@ -1,6 +1,7 @@
 package com.fcbai.spark.example
 
 import org.apache.spark.sql.SparkSession
+import org.apache.logging.log4j.spi.AbstractLoggerAdapter
 
 class Examples {
 
@@ -19,7 +20,8 @@ object Examples {
     val numAs = logData.filter(line => line.contains("a")).count()
     val numBs = logData.filter(line => line.contains("b")).count()
     println(s"Lines with a: $numAs, Lines with b: $numBs")
-    HudiExamples.write
+//    HudiExamples.write
+    HudiExamples.query
     spark.stop()
   }
 }
